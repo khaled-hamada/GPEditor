@@ -1,0 +1,16 @@
+//debug the sensor 
+
+1-- 
+
+roslaunch baymaxrobot bringup.launch
+
+2--
+
+roscd baymaxrobot/rviz
+rviz -d laser.rviz
+
+###############################################
+2 Visualizing the Laser Data
+Check if rviz can receive the laser data.
+
+

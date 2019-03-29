@@ -1,0 +1,109 @@
+      teensy                     imu_calib                    imu_madgwick_filter         robot_localization
++----------------+           +---------------+                +----------------+             +-----------+
+|   IMU DRIVER   | +-------> |   IMU RELAY   | +------------> | AHRS ALGORITHM | +---------> |           |
++----------------+           +---------------+                +----------------+             |           |
+                   'raw_imu'                   'imu/data_raw'                    'imu/data'  |           |
+                                                                                             |base conttrol   | +------>
+      teensy                   baymax_base_node                                              |           |  'odom'
++----------------+           +---------------+                                               |           |
+| ENCODER DRIVER | +-------> | ENCODER RELAY | +-------------------------------------------> |           |
++----------------+           +---------------+                                               +-----------+
+                   'raw_vel'                                      'raw_odom'
+
+
+
+
+
+
+
+To know more about publishing odometry information: 
+
+	http://wiki.ros.org/navigation/Tutorials/RobotSetup/Odom
+
+
+###########################################33
+ 1- Checking the Odometry Information
+
+1- 
+roslaunch baymaxrobot minimal.launch
+
+2-
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+3-
+rostopic echo odom
+
+4-
+roscd baymaxrobot/rviz
+rviz -d odometry.rviz
+
+######################################################
+2 Check odometry using rostopic
+Drive the robot forward and check /odom if the linear velocity in the x axis is approximately equal to the speed defined at teleop_twist_keyboard (ie. 0.5 m/s) as seen below. The linear velocity must be positive as you drive forward and negative as you reverse the robot.
+
+
+###############################################################
+3 Check odometry using rviz
+	Close all terminals and repeat step 1 . Rotate the robot 360 degrees by pressing 'j' from teleop_twist_keyboard. Check on rviz if the robot is back to its initial angle.
+
+	
+	Next, drive the robot forward approximately 1m. Check on rviz if the robot's displacement is ~1m. Each square in rviz is 1 square meter
+
+
+Lastly, drive the robot in a square-shaped pattern. Check on rviz if the robot's location is approximately near its origin. It's fine it the loop didn't close as AMCL will correct the robot's pose eventually.
+
+#######################################################33
+4- TroubleShooting 
+
+1-
+If linear velocity's sign is wrong, try swapping the encoder pins 
+
+2-
+If angular velocity's sign is wrong, check if the IMU is mounted in the correct orientation( X - towards the front, Y- towards left).
+
+3-
+If the angular velocity has no reading at all, check IMU's wiring.
+
+If the displacement of the robot on rviz does not match the actual displacement of the robot, check your robot's config (/firmware/lib /config/baymax_base_config.h)
+
+MAX_RPM = motor's maximum RPM
+
+COUNTS_PER_REV = no of ticks per wheel revolution
+
+WHEEL_DIAMETER = wheel's diameter
+
+LR_WHEELS_DISTANCE = distance between left and right wheels
+
+FR_WHEELS_DISTANCE = distance between front and rear wheels. Ignore this if you're on 2WD/ACKERMANN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///odometry .rviz
+
+
+
+
+sform (-nan -nan -nan -nan)
+[ERROR] [1553697958.910949083]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of a nan value in the transform (0.000000 0.000000 0.000000) (-nan -nan -nan -nan)
+[ERROR] [1553697958.911091427]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of an invalid quaternion in the transform (-nan -nan -nan -nan)
+[ERROR] [1553697958.963181141]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of a nan value in the transform (0.000000 0.000000 0.000000) (-nan -nan -nan -nan)
+[ERROR] [1553697958.963246351]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of an invalid quaternion in the transform (-nan -nan -nan -nan)
+[ERROR] [1553697959.020233320]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of a nan value in the transform (0.000000 0.000000 0.000000) (-nan -nan -nan -nan)
+[ERROR] [1553697959.020289073]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of an invalid quaternion in the transform (-nan -nan -nan -nan)
+
+
+
+

@@ -1,0 +1,55 @@
+
+
+
+#############################################################
+try try check  amcl.launch.xml from chefbot package especially 
+
+
+
+
+
+
+
+###########################################		
+
+
+
+	1 Define robot size
+
+costmap_common_params.yaml:
+
+	baymaxrobot/param/navigation/costmap_common_params.yaml
+
+define the robot's footprint:
+
+footprint: [[-x, -y], [-x, y], [x, y], [x, -y]]
+where x = ROBOT_LENGTH / 2 and y = ROBOT_WIDTH / 2
+
+###################################
+2 Launch AMCL app
+
+1-
+roslaunch baymaxrobot bringup.launch
+
+2-
+roslaunch baymaxrobot navigate.launch
+
+3-
+roscd baymaxrobot/rviz
+rviz -d navigate.rviz
+
+
+#####################################3
+3 Set initial pose
+To localize the robot, click "2D Post Estimate".
+Pinpoint on the map the approximate location of the robot and drag towards the robot's heading.
+
+
+##########################################3
+
+4 Sending goals
+After localizing, click "2D Nav Goal".
+Pinpoint your desired location on the map and drag towards the direction you want your robot to be heading at once it has reached its goal.
+
+
+

@@ -1,0 +1,22 @@
+arduino 
+
+roscore
+
+rosrun rosserial_python serial_node.py /dev/ttyACM0
+
+rostopic echo  ... name of the topic 
+
+
+ ///   publish data 
+rostopic pub -r 5 talker std_msgs/String "Hello World"
+
+
+
+
+//////      to open the serial port 
+
+sudo chmod 666 /dev/ttyACM0
+
+
+//interrup pins 
+2, 3, 18, 19, 20, 21

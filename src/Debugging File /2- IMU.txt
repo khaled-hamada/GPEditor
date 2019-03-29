@@ -1,0 +1,37 @@
+Connect the IMU to the Arduino board as shown below and remember to mark which side of the IMU will be facing the front. This is to ensure that the IMU's orientation is correct once you mount it in the robot. To calibrate, run the following on the robot computer:
+
+
+
+/// conection 
+scl 19 
+sda 18
+vcc 3.3 volt  and ground 
+############################33
+1- 
+roslaunch baymaxrobot minimal.launch
+
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+
+2 
+On another terminal, run the IMU calibration node:
+
+roscd baymaxrobot/param/imu
+mv imu_calib.yaml imu_calib0.yaml 
+rosrun imu_calib do_calib
+
+3- 
+Follow the instructions on the terminal until the calibration process is done. It's normal that each step would take some time so don't terminate the program. Once done, verify if the calibration file has been saved.
+
+ls imu_calib.yaml
+
+
+
+
+
+
+///MOTOR DRIVER
+ use the same firmware and follow the same pin assignments below as long as your new motor driver has PWM, IN1, and IN2 pins
+
+
+

@@ -1,0 +1,21 @@
+<launch>
+    <!-- Start ROS communication between the robot's computer and baymaxrobot base -->
+    <node pkg="rosserial_python" name="rosserial_lino" type="serial_node.py" output="screen">
+        <param name="port" value="/dev/baymaxbase" />
+        <param name="baud" value="57600" />
+    </node>
+
+    <!-- IMU Relay and Filter -->
+    <include file="$(find baymaxrobot)/launch/include/imu/imu.launch" />
+
+    <!-- Publish baymaxrobot odometry -->
+    <node pkg="baymaxrobot" name="baymax_base_node" type="baymax_base_node"></node>
+
+    <!-- Publish static transform from base_footprint to base_link -->
+    <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_base_link" args="0 0 0.098 0 0 0  /base_footprint /base_link"/>
+
+   
+
+    <!-- Run baymaxrobot compatible laser drivers -->
+    <include file="$(find baymaxrobot)/launch/include/laser.launch" />
+</launch>

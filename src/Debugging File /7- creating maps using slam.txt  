@@ -1,0 +1,31 @@
+// launch files for bay max 
+
+1- creatin maps using slam 
+Run bringup.launch:
+
+	roslaunch baymaxrobot bringup.launch
+
+
+Run slam.launch:
+
+	roslaunch baymaxrobot slam.launch
+2- move the robot around 
+
+Run teleop_twist_keyboard:
+
+	rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+Run rviz:
+
+	roscd baymax_visualize/rviz
+	rviz -d slam.rviz
+
+
+
+3 Saving the map
+rosrun map_server map_saver -f ~/linorobot_ws/src/linorobot/maps/map
+
+Check if map.pgm and map.yaml has been saved:
+
+roscd linorobot/maps
+ls -a map.pgm map.yaml
+

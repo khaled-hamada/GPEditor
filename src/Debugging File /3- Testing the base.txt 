@@ -1,0 +1,27 @@
+1- 
+roslaunch baymaxrobot minimal.launch
+
+2-
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+
+
+//////////////////////////////////////
+Check the encoder readings
+1-
+If the wheel’s direction is wrong as you drive forward or reverse, swap the pin assignments for MOTOR*_IN_A and MOTOR*_IN_B in the config file
+
+2-
+If the encoder returns opposite results, swap the pin assignments for MOTOR*_ENCODER_A and MOTOR*_ENCODER_B in the config file 
+
+
+//////////////////////////////////
+
+Calibrating PID
+use zeiger second method 
+
+Once your PID constants are tuned, record the values and edit the config file:
+firmware/lib/config
+
+
+

@@ -1,0 +1,8 @@
+prefix=/home/khaled/baymax_ws2/devel
+
+Name: baymax_msgs
+Description: Description of baymax_msgs
+Version: 0.0.0
+Cflags: -I/home/khaled/baymax_ws2/devel/include
+Libs: -L/home/khaled/baymax_ws2/devel/lib 
+Requires: message_runtime std_msgs geometry_msgs

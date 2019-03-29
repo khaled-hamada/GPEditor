@@ -1,0 +1,63 @@
+TF : Where are you sensors been located .
+
+TF is ROS's way of determining the robot's location and relationships between coordinate frames. 
+
+
+5.1 The robot's transforms
+///////////////////////
+
+1 odom -> base_footprint -- dynamic 
+This transform is the relationship between the robot's current pose from its origin. This transform is published by robot_localization package (EKF).
+
+##########################################################
+
+2 base_footprint -> base_link	 -- static 
+This transform is the static relationship between the center of the robot base and the floor.
+
+############################################################
+
+3 base_link -> laser             -- static 
+This transform is the static relationship between the Kinect and the robot's base. Basically, this tells ROS the Kinect's offset in x, y and z axis from the center of the robot's base. Imagine a Kinect (mounted behind a 10cm long base) detects an obstacle 10 cm in front of the robot. The actual distance of the robot from the obstacle would be 5 cm since there's a 5 cm offset from the center of the base to the rear. Without this transform, the robot would have hit the obstacle prematurely as it thinks that the obstacle is still 10 cm away when it's only 5cm away from the obstacle.
+
+
+###################################################################
+		CONFIGURATION OF TF 
+
+1 -  Configuring Robot Base's TF
+	baymaxrobot/launch/bringup.launch 
+Measure the distance between the floor and the center of the robot base. Define the measured distance on the third value found in "args" param
+
+
+#####
+2-  Laser Tf 
+baymaxrobot/launch/include/laser.launch
+
+
+Determine the Kinect's location from the center of the base and change the first three numbers in "args" to your measured offsets. What these values mean is that the Kinect is 6.5 cm forward and 9.8 cm from the center of the base.
+
+
+
+#######################################################################
+	3 Checking Laser's TF
+1- 
+
+roslaunch baymaxrobot bringup.launch
+
+2-
+
+roslaunch baymaxrobot laser.launch
+
+3- 
+roscd baymaxrobot/rviz
+rviz -d laser.rviz
+
+
+Place the robot 1 m away from a wall. Check on rviz if the wall detected is~1m. Each square in rviz is 1 square meter
+
+--- If the wall detected on rviz doesn't match with the actual distance between the wall and the robot, confirm that your x, y, and z offsets defined at laser.launch are correct.
+
+
+
+
+
+

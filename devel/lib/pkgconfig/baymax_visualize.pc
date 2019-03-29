@@ -1,0 +1,8 @@
+prefix=/home/khaled/baymax_ws2/devel
+
+Name: baymax_visualize
+Description: Description of baymax_visualize
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/khaled/baymax_ws2/devel/lib 
+Requires: 

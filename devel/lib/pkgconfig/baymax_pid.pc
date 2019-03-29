@@ -1,0 +1,8 @@
+prefix=/home/khaled/baymax_ws2/devel
+
+Name: baymax_pid
+Description: Description of baymax_pid
+Version: 0.0.0
+Cflags: -I/home/khaled/baymax_ws2/devel/include -I/home/khaled/baymax_ws2/src/baymax_pid/include
+Libs: -L/home/khaled/baymax_ws2/devel/lib 
+Requires: dynamic_reconfigure message_runtime roscpp std_msgs baymax_msgs

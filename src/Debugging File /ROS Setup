@@ -1,0 +1,15 @@
+#configure terminals 
+source /opt/ros/kinetic/setup.bash
+
+
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+
+
+
+
+// to check current working package
+
+echo $ROS_PACKAGE_PATH
+

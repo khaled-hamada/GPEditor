@@ -1,0 +1,8 @@
+prefix=/home/khaled/baymax_ws2/install
+
+Name: baymaxrobot
+Description: Description of baymaxrobot
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/khaled/baymax_ws2/install/lib -lbaymaxrobot
+Requires: roscpp rospy tf2 tf2_ros nav_msgs baymax_msgs geometry_msgs sensor_msgs std_msgs tf

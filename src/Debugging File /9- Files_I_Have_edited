@@ -1,0 +1,12 @@
+1- base node rate from 10 hz to 1 hz 
+2- arduino code  IMU Rate from 20 hz to .5 hz 
+3- arduion code print debug commented 
+
+
+
+
+
+// not edited but i want 
+edit world frame in imu.lauvn from enu    -> nwu
+
+

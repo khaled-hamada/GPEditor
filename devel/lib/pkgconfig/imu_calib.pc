@@ -1,0 +1,8 @@
+prefix=/home/khaled/baymax_ws2/devel
+
+Name: imu_calib
+Description: Description of imu_calib
+Version: 0.0.0
+Cflags: -I/home/khaled/baymax_ws2/src/imu_calib/include -I/usr/include/eigen3
+Libs: -L/home/khaled/baymax_ws2/devel/lib -laccel_calib
+Requires: cmake_modules roscpp sensor_msgs baymax_msgs

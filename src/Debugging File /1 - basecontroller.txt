@@ -1,0 +1,67 @@
+###############create base fir baymax
+The serial ports for the lidar and the Arduino board are defined using its static names on the roslaunch files. In order for the serial ports to be remembered and linked to its static names, a uDev rule must be created (except for Kinect and RealSense). Run Linorobot's uDev tool on the robot's computer:
+
+rosrun baymax_udev baymax_udev.py
+
+
+Plug in the Arduino board and key in "baymaxbase". Do the same thing for the lidar and name it as "baymaxlidar". Save your uDev rules by pressing CTRL+C.
+
+Copy the saved udev rules to /etc/udev/rules.d:
+
+sudo cp 58-baymax.rules /etc/udev/rules.d/58-baymax.rules
+Restart udev:
+
+sudo service udev reload
+sudo service udev restart
+Confirm if the uDev rules worked:
+
+ls /dev/baymaxbase
+ls /dev/baymaxlidar
+If the serial ports cannot be detected, restart the robot's computer and check again. Take note that freshly shipped Arduino boards has to be be programmed once before you can see its ports. Proceed to Base Controller to upload the firmware.
+
+
+
+#############################################################
+
+
+
+ROS navigation stack drives the robot by publishing velocity commands to /cmd_vel topic using geometry/Twist messages. The base controller on the Arduino board receives the twist messages through rosserial_python and translates the velocites to motor commands. A PID controller maintains the robot's speed by calculating how much PWM signal must be generated to spin each motor based from the total error over time. Errors are derived by comparing the actual motor's speed to the desired speed sent by navigation stack
+
+
+
+
+##############################################################///
+1- configuration file 
+/arduino/firmware/lib/config
+     baymax_base_config.h
+
+
+define variable DEBUG as 1 for debugging later.
+//uncomment the motor driver you're using
+#define USE_L298_DRIVER
+
+//define your robot' specs here
+#define MAX_RPM 110               // motor's maximum RPM
+#define COUNTS_PER_REV 240       // wheel encoder's no of ticks per rev
+#define WHEEL_DIAMETER .13       // wheel's diameter in meters
+#define PWM_BITS 8                // PWM Resolution of the microcontroller
+#define LR_WHEELS_DISTANCE 0.38  // distance between left and right wheels
+
+
+// counts per revolution 
+If you are unsure what is the encoder’s PPR (COUNTS_PER_REV) – you can check the encoder’s total count from minimal.launch’s terminal (see 2.3.1). Get the recent count and rotate the wheel 360 degrees:
+
+PPR = abs(RECENT_COUNT – INITIAL_COUNT)
+
+If you have the encoder and motor’s specification:
+
+PPR = MOTOR_GEAR_RATIO * ENCODER_RES
+
+
+###########################################3 PINS 
+/// ENCODER PINS
+
+/// motor pins 
+
+/// ultra sonic pins 
+
