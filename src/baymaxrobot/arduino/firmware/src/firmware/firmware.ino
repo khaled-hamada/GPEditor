@@ -31,11 +31,11 @@
 #define DEBUG_RATE 5
 
 Encoder motor1_encoder(MOTOR1_ENCODER_A, MOTOR1_ENCODER_B, COUNTS_PER_REV);
-Encoder motor2_encoder(MOTOR2_ENCODER_A, MOTOR2_ENCODER_B, COUNTS_PER_REV); 
+Encoder motor2_encoder(MOTOR2_ENCODER_A, MOTOR2_ENCODER_B, COUNTS_PER_REV);
 
 
 Controller motor1_controller(Controller::MOTOR_DRIVER, MOTOR1_PWM, MOTOR1_IN_A);
-Controller motor2_controller(Controller::MOTOR_DRIVER, MOTOR2_PWM, MOTOR2_IN_A); 
+Controller motor2_controller(Controller::MOTOR_DRIVER, MOTOR2_PWM, MOTOR2_IN_A);
 
 PID motor1_pid(PWM_MIN, PWM_MAX, K_P, K_I, K_D);
 PID motor2_pid(PWM_MIN, PWM_MAX, K_P, K_I, K_D);
@@ -63,15 +63,15 @@ ros::Publisher raw_imu_pub("raw_imu", &raw_imu_msg);
 baymax_msgs::Velocities raw_vel_msg;
 ros::Publisher raw_vel_pub("raw_vel", &raw_vel_msg);
 
-//  parametrs for debugging issues 
+//  parametrs for debugging issues
 double pid1;
 double pid2;
 
 
 void setup()
 {
-   
-    
+
+
     nh.initNode();
     nh.getHardware()->setBaud(57600);
     nh.subscribe(pid_sub);
@@ -108,7 +108,7 @@ void loop()
     }
 
     //this block publishes the IMU data based on defined rate
-   /* if ((millis() - prev_imu_time) >= (1000 / IMU_PUBLISH_RATE))
+   if ((millis() - prev_imu_time) >= (1000 / IMU_PUBLISH_RATE))
     {
         //sanity check if the IMU is connected
         if (!imu_is_initialized)
@@ -126,16 +126,16 @@ void loop()
         }
         prev_imu_time = millis();
     }
-  */
+  
     //this block displays the encoder readings. change DEBUG to 0 if you don't want to display
     if(DEBUG)
     {
-        // add here function to print pid values 
+        // add here function to print pid values
         if ((millis() - prev_debug_time) >= (1000 / DEBUG_RATE))
         {
             printDebug();
             prev_debug_time = millis();
-            
+
         }
     }
     //call all the callbacks waiting to be called
@@ -148,7 +148,7 @@ void PIDCallback(const baymax_msgs::PID& pid)
     //this callback receives pid object where P,I, and D constants are stored
     motor1_pid.updateConstants(pid.p, pid.i, pid.d);
     motor2_pid.updateConstants(pid.p, pid.i, pid.d);
-    
+
 }
 
 void commandCallback(const geometry_msgs::Twist& cmd_msg)
@@ -170,7 +170,7 @@ void moveBase()
     //get the current speed of each motor
     int current_rpm1 = motor1_encoder.getRPM();
     int current_rpm2 = motor2_encoder.getRPM();
-   
+
 
     //the required rpm is capped at -/+ MAX_RPM to prevent the PID from having too much error
     //the PWM value sent to the motor driver is the calculated PID based on required RPM vs measured RPM
@@ -178,12 +178,12 @@ void moveBase()
     pid2 = motor2_pid.compute(req_rpm.motor2, current_rpm2);
     motor1_controller.spin(pid1);
     motor2_controller.spin(pid2);
-   
+
 
     Kinematics::velocities current_vel;
     current_vel = kinematics.getVelocities(current_rpm1, current_rpm2);
-    
-    
+
+
     //pass velocities to publisher object
     raw_vel_msg.linear_x = current_vel.linear_x;
     raw_vel_msg.linear_y = current_vel.linear_y;
@@ -226,16 +226,16 @@ void printDebug()
     sprintf (print_buffer, "Encoder FrontRight : %ld", motor2_encoder.read());
     nh.loginfo(print_buffer);
 
-    
-    // special for double only 
+
+    // special for double only
     /* 4 is mininum width, 2 is precision; float value is copied onto str_temp*/
     dtostrf(pid1, 4, 3, pid_buffer );
     sprintf(print_buffer,"pid motor 1 :  %s", pid_buffer);
     nh.loginfo(print_buffer);
 
-    
+
     dtostrf(pid2, 4, 3, pid_buffer );
     sprintf(print_buffer,"pid motor 2 :  %s", pid_buffer);
     nh.loginfo(print_buffer);
-    
+
 }
