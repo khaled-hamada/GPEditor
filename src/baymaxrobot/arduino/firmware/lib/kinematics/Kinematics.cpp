@@ -89,7 +89,7 @@ Kinematics::velocities Kinematics::getVelocities(int rpm1, int rpm2)
     float average_rps_a;
 
     //convert average revolutions per minute to revolutions per second
-    average_rps_x = ((float)(rpm1 + rpm2 ) / total_wheels_) / 60; // RPM
+    average_rps_x = ((float)(rpm1 + rpm2 ) / total_wheels_) / 60; // RPS
     vel.linear_x = average_rps_x * wheel_circumference_; // m/s
     // only forward velocity 
     vel.linear_y = 0;

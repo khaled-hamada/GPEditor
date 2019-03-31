@@ -28,7 +28,7 @@
 
 // i will change it from 20 hz to .5 hz just for 
 // debugging 
-#define IMU_PUBLISH_RATE .5 //hz
+#define IMU_PUBLISH_RATE 20 //hz
 #define COMMAND_RATE 20 //hz
 #define DEBUG_RATE 1  // hz
 
@@ -135,7 +135,7 @@ void loop()
         // add here function to print pid values 
         if ((millis() - prev_debug_time) >= (1000 / DEBUG_RATE))
         {
-            printDebug();
+           // printDebug();
             prev_debug_time = millis();
             
         }
