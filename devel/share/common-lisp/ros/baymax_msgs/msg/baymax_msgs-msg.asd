@@ -11,4 +11,6 @@
     (:file "_package_PID" :depends-on ("_package"))
     (:file "Velocities" :depends-on ("_package_Velocities"))
     (:file "_package_Velocities" :depends-on ("_package"))
+    (:file "baymaxPose" :depends-on ("_package_baymaxPose"))
+    (:file "_package_baymaxPose" :depends-on ("_package"))
   ))

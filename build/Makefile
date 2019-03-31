@@ -348,6 +348,32 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named baymax_msgs_gennodejs
+
+# Build rule for target.
+baymax_msgs_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baymax_msgs_gennodejs
+.PHONY : baymax_msgs_gennodejs
+
+# fast build rule for target.
+baymax_msgs_gennodejs/fast:
+	$(MAKE) -f baymax_msgs/CMakeFiles/baymax_msgs_gennodejs.dir/build.make baymax_msgs/CMakeFiles/baymax_msgs_gennodejs.dir/build
+.PHONY : baymax_msgs_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named baymax_msgs_generate_messages
+
+# Build rule for target.
+baymax_msgs_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baymax_msgs_generate_messages
+.PHONY : baymax_msgs_generate_messages
+
+# fast build rule for target.
+baymax_msgs_generate_messages/fast:
+	$(MAKE) -f baymax_msgs/CMakeFiles/baymax_msgs_generate_messages.dir/build.make baymax_msgs/CMakeFiles/baymax_msgs_generate_messages.dir/build
+.PHONY : baymax_msgs_generate_messages/fast
+
+#=============================================================================
 # Target rules for targets named baymax_msgs_gencpp
 
 # Build rule for target.
@@ -372,32 +398,6 @@ geometry_msgs_generate_messages_eus: cmake_check_build_system
 geometry_msgs_generate_messages_eus/fast:
 	$(MAKE) -f baymax_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make baymax_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named baymax_msgs_generate_messages
-
-# Build rule for target.
-baymax_msgs_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 baymax_msgs_generate_messages
-.PHONY : baymax_msgs_generate_messages
-
-# fast build rule for target.
-baymax_msgs_generate_messages/fast:
-	$(MAKE) -f baymax_msgs/CMakeFiles/baymax_msgs_generate_messages.dir/build.make baymax_msgs/CMakeFiles/baymax_msgs_generate_messages.dir/build
-.PHONY : baymax_msgs_generate_messages/fast
-
-#=============================================================================
-# Target rules for targets named baymax_msgs_gennodejs
-
-# Build rule for target.
-baymax_msgs_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 baymax_msgs_gennodejs
-.PHONY : baymax_msgs_gennodejs
-
-# fast build rule for target.
-baymax_msgs_gennodejs/fast:
-	$(MAKE) -f baymax_msgs/CMakeFiles/baymax_msgs_gennodejs.dir/build.make baymax_msgs/CMakeFiles/baymax_msgs_gennodejs.dir/build
-.PHONY : baymax_msgs_gennodejs/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_lisp
@@ -554,6 +554,19 @@ geometry_msgs_generate_messages_cpp: cmake_check_build_system
 geometry_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f baymax_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make baymax_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 .PHONY : geometry_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _baymax_msgs_generate_messages_check_deps_baymaxPose
+
+# Build rule for target.
+_baymax_msgs_generate_messages_check_deps_baymaxPose: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baymax_msgs_generate_messages_check_deps_baymaxPose
+.PHONY : _baymax_msgs_generate_messages_check_deps_baymaxPose
+
+# fast build rule for target.
+_baymax_msgs_generate_messages_check_deps_baymaxPose/fast:
+	$(MAKE) -f baymax_msgs/CMakeFiles/_baymax_msgs_generate_messages_check_deps_baymaxPose.dir/build.make baymax_msgs/CMakeFiles/_baymax_msgs_generate_messages_check_deps_baymaxPose.dir/build
+.PHONY : _baymax_msgs_generate_messages_check_deps_baymaxPose/fast
 
 #=============================================================================
 # Target rules for targets named baymax_msgs_generate_messages_cpp
@@ -1206,10 +1219,10 @@ help:
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... baymax_msgs_gennodejs"
+	@echo "... baymax_msgs_generate_messages"
 	@echo "... baymax_msgs_gencpp"
 	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... baymax_msgs_generate_messages"
-	@echo "... baymax_msgs_gennodejs"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_nodejs"
@@ -1222,6 +1235,7 @@ help:
 	@echo "... baymax_msgs_genlisp"
 	@echo "... _baymax_msgs_generate_messages_check_deps_Imu"
 	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... _baymax_msgs_generate_messages_check_deps_baymaxPose"
 	@echo "... baymax_msgs_generate_messages_cpp"
 	@echo "... baymax_msgs_generate_messages_lisp"
 	@echo "... baymax_msgs_geneus"

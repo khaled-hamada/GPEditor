@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/khaled/baymax_ws2/build
 include baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_py.dir/progress.make
 
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_Velocities.py
+baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_baymaxPose.py
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_PID.py
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_Imu.py
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/__init__.py
@@ -64,26 +65,33 @@ baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_py: /home/khaled/baymax_ws2
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG baymax_msgs/Velocities"
 	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg
 
+/home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_baymaxPose.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_baymaxPose.py: /home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG baymax_msgs/baymaxPose"
+	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg
+
 /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_PID.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_PID.py: /home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG baymax_msgs/PID"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG baymax_msgs/PID"
 	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg
 
 /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_Imu.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_Imu.py: /home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg
 /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_Imu.py: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG baymax_msgs/Imu"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG baymax_msgs/Imu"
 	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg
 
 /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/__init__.py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_Velocities.py
+/home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/__init__.py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_baymaxPose.py
 /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/__init__.py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_PID.py
 /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/__init__.py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_Imu.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for baymax_msgs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python msg __init__.py for baymax_msgs"
 	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg --initpy
 
 baymax_msgs_generate_messages_py: baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_py
 baymax_msgs_generate_messages_py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_Velocities.py
+baymax_msgs_generate_messages_py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_baymaxPose.py
 baymax_msgs_generate_messages_py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_PID.py
 baymax_msgs_generate_messages_py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/_Imu.py
 baymax_msgs_generate_messages_py: /home/khaled/baymax_ws2/devel/lib/python2.7/dist-packages/baymax_msgs/msg/__init__.py

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "baymax_msgs: 3 messages, 0 services")
+message(STATUS "baymax_msgs: 4 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg")
 
@@ -22,6 +22,11 @@ add_custom_target(_baymax_msgs_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baymax_msgs" "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg" ""
 )
 
+get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg" NAME_WE)
+add_custom_target(_baymax_msgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baymax_msgs" "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg" ""
+)
+
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg" NAME_WE)
 add_custom_target(_baymax_msgs_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baymax_msgs" "/home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg" ""
@@ -40,6 +45,12 @@ add_custom_target(_baymax_msgs_generate_messages_check_deps_${_filename}
 ### Generating Messages
 _generate_msg_cpp(baymax_msgs
   "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/baymax_msgs
+)
+_generate_msg_cpp(baymax_msgs
+  "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/baymax_msgs
@@ -73,6 +84,8 @@ add_dependencies(baymax_msgs_generate_messages baymax_msgs_generate_messages_cpp
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg" NAME_WE)
 add_dependencies(baymax_msgs_generate_messages_cpp _baymax_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg" NAME_WE)
+add_dependencies(baymax_msgs_generate_messages_cpp _baymax_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg" NAME_WE)
 add_dependencies(baymax_msgs_generate_messages_cpp _baymax_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg" NAME_WE)
@@ -89,6 +102,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS baymax_msgs_generate_messages_cpp)
 ### Generating Messages
 _generate_msg_eus(baymax_msgs
   "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/baymax_msgs
+)
+_generate_msg_eus(baymax_msgs
+  "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/baymax_msgs
@@ -122,6 +141,8 @@ add_dependencies(baymax_msgs_generate_messages baymax_msgs_generate_messages_eus
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg" NAME_WE)
 add_dependencies(baymax_msgs_generate_messages_eus _baymax_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg" NAME_WE)
+add_dependencies(baymax_msgs_generate_messages_eus _baymax_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg" NAME_WE)
 add_dependencies(baymax_msgs_generate_messages_eus _baymax_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg" NAME_WE)
@@ -138,6 +159,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS baymax_msgs_generate_messages_eus)
 ### Generating Messages
 _generate_msg_lisp(baymax_msgs
   "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/baymax_msgs
+)
+_generate_msg_lisp(baymax_msgs
+  "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/baymax_msgs
@@ -171,6 +198,8 @@ add_dependencies(baymax_msgs_generate_messages baymax_msgs_generate_messages_lis
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg" NAME_WE)
 add_dependencies(baymax_msgs_generate_messages_lisp _baymax_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg" NAME_WE)
+add_dependencies(baymax_msgs_generate_messages_lisp _baymax_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg" NAME_WE)
 add_dependencies(baymax_msgs_generate_messages_lisp _baymax_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg" NAME_WE)
@@ -187,6 +216,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS baymax_msgs_generate_messages_lisp)
 ### Generating Messages
 _generate_msg_nodejs(baymax_msgs
   "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/baymax_msgs
+)
+_generate_msg_nodejs(baymax_msgs
+  "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/baymax_msgs
@@ -220,6 +255,8 @@ add_dependencies(baymax_msgs_generate_messages baymax_msgs_generate_messages_nod
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg" NAME_WE)
 add_dependencies(baymax_msgs_generate_messages_nodejs _baymax_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg" NAME_WE)
+add_dependencies(baymax_msgs_generate_messages_nodejs _baymax_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg" NAME_WE)
 add_dependencies(baymax_msgs_generate_messages_nodejs _baymax_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg" NAME_WE)
@@ -236,6 +273,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS baymax_msgs_generate_messages_nodej
 ### Generating Messages
 _generate_msg_py(baymax_msgs
   "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baymax_msgs
+)
+_generate_msg_py(baymax_msgs
+  "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baymax_msgs
@@ -268,6 +311,8 @@ add_dependencies(baymax_msgs_generate_messages baymax_msgs_generate_messages_py)
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg" NAME_WE)
+add_dependencies(baymax_msgs_generate_messages_py _baymax_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg" NAME_WE)
 add_dependencies(baymax_msgs_generate_messages_py _baymax_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg" NAME_WE)
 add_dependencies(baymax_msgs_generate_messages_py _baymax_msgs_generate_messages_check_deps_${_filename})

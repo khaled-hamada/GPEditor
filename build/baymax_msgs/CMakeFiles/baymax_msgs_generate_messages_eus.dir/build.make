@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/khaled/baymax_ws2/build
 include baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_eus.dir/progress.make
 
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_eus: /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/Velocities.l
+baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_eus: /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/baymaxPose.l
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_eus: /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/PID.l
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_eus: /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/Imu.l
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_eus: /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/manifest.l
@@ -64,23 +65,29 @@ baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_eus: /home/khaled/baymax_ws
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from baymax_msgs/Velocities.msg"
 	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg
 
+/home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/baymaxPose.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/baymaxPose.l: /home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from baymax_msgs/baymaxPose.msg"
+	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg
+
 /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/PID.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/PID.l: /home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from baymax_msgs/PID.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from baymax_msgs/PID.msg"
 	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg
 
 /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/Imu.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/Imu.l: /home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg
 /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/Imu.l: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from baymax_msgs/Imu.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from baymax_msgs/Imu.msg"
 	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg
 
 /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp manifest code for baymax_msgs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp manifest code for baymax_msgs"
 	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs baymax_msgs std_msgs geometry_msgs
 
 baymax_msgs_generate_messages_eus: baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_eus
 baymax_msgs_generate_messages_eus: /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/Velocities.l
+baymax_msgs_generate_messages_eus: /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/baymaxPose.l
 baymax_msgs_generate_messages_eus: /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/PID.l
 baymax_msgs_generate_messages_eus: /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/msg/Imu.l
 baymax_msgs_generate_messages_eus: /home/khaled/baymax_ws2/devel/share/roseus/ros/baymax_msgs/manifest.l

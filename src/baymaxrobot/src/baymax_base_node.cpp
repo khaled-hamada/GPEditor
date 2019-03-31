@@ -2,8 +2,10 @@
 #include <tf/transform_broadcaster.h>
 #include <nav_msgs/Odometry.h>
 #include <baymax_msgs/Velocities.h>
+#include <baymax_msgs/baymaxPose.h>
 #include <sensor_msgs/Imu.h>
 #include <math.h>
+#define    PI  3.141592
 
 double g_vel_x = 0.0;
 double g_vel_y = 0.0;
@@ -22,7 +24,7 @@ void velCallback( const baymax_msgs::Velocities& vel) {
 
     g_vel_x = vel.linear_x;
     g_vel_y = vel.linear_y;
-    g_imu_z = vel.angular_z;
+   // g_imu_z = vel.angular_z;
 
     g_vel_dt = (current_time - g_last_vel_time).toSec();
     g_last_vel_time = current_time;
@@ -34,12 +36,18 @@ void IMUCallback( const sensor_msgs::Imu& imu){
     //this block is to filter out imu noise
     if(imu.angular_velocity.z > -0.03 && imu.angular_velocity.z < 0.03)
     {
-      //  g_imu_z = 0.00;
+     	  g_imu_z = 0.00;
     }
-    else
-    {
-        //g_imu_z = imu.angular_velocity.z;
+    else{
+    
+        g_imu_z = imu.angular_velocity.z;
     }
+    // reject noise above 1.0 or -1.0 
+   /* if(g_imu_z > 1.0)
+	g_imu_z = 1.0;
+    else if(g_imu_z < -1.0)
+	g_imu_z = -1.0; */
+
     g_imu_dt = (current_time - g_last_imu_time).toSec();
     g_last_imu_time = current_time;
 }
@@ -51,12 +59,15 @@ int main(int argc, char** argv){
     ros::Subscriber sub = n.subscribe("raw_vel", 50, velCallback);
     ros::Subscriber imu_sub = n.subscribe("imu/data", 50, IMUCallback);
     ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
+    ros::Publisher bayPose = n.advertise<baymax_msgs::baymaxPose>("baymax/pose",50);
     tf::TransformBroadcaster odom_broadcaster;
     // return it again to 10 hz i made it = 1hz just for debugging 
-    double rate = 1.0;
+    double rate = 20;
     double x_pos = 0.0;
     double y_pos = 0.0;
     double theta = 0.0;
+    // just for deugging 
+    double last_theta = 0.0;
 
     ros::Rate r(rate);
     while(n.ok()){
@@ -73,14 +84,47 @@ int main(int argc, char** argv){
         double angular_velocity = g_imu_z;
 
         //calculate angular displacement  θ = ω * t
-        double delta_theta = angular_velocity * g_vel_dt; //radians
+        double delta_theta = angular_velocity * g_imu_dt; //radians
         double delta_x = (linear_velocity_x * cos(theta) - linear_velocity_y * sin(theta)) * g_vel_dt; //m
         double delta_y = (linear_velocity_x * sin(theta) + linear_velocity_y * cos(theta)) * g_vel_dt; //m
 
         //calculate current position of the robot
         x_pos += delta_x;
         y_pos += delta_y;
-        theta += delta_theta;
+        theta += delta_theta ;
+	/*if (fabs(delta_theta) > 0.125){
+		theta  = ( theta / 6.85) * (2 * PI);
+		//theta = std::fmod(theta , 2 * M_PI);
+	}*/
+
+	// the drift is .55 for each 2 * Pi so we will subtract it as  .55/2*PI
+	if (fabs(theta - last_theta) > 0.125){
+		if(fabs(last_theta) > fabs(theta)){
+			theta = theta - ((.0875 * theta) );
+			last_theta = theta ;
+		}
+		else{
+			theta = theta - ((.0875 * (theta - last_theta))  );
+			last_theta = theta ; 
+		}
+		//theta  = ( theta / 6.85) * (2 * PI);
+		//theta = std::fmod(theta , 2 * M_PI);
+	}
+	//there is always an offset between .3 to .55 
+	/*if( fabs(theta) >= (2 * PI + 0.55)){
+		//theta = std::fmod(theta , 2 * M_PI);
+		theta  = 0.0;
+	}*/
+	if( fabs(theta) >= (2 * PI)){
+		//theta = std::fmod(theta , 2 * M_PI);
+		theta  = 0.0;
+	}
+	//ROS_INFO("g_IMU_Z %f  \n",g_imu_z);	
+	baymax_msgs::baymaxPose bPose;
+	bPose.x = x_pos;
+	bPose.y = y_pos;
+	bPose.theta = theta;
+	bayPose.publish(bPose);	
 
         //calculate robot's heading in quarternion angle
         //ROS has a function to calculate yaw in quaternion angle

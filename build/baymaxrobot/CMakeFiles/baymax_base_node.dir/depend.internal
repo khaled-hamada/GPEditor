@@ -3,6 +3,7 @@
 
 baymaxrobot/CMakeFiles/baymax_base_node.dir/src/baymax_base_node.cpp.o
  /home/khaled/baymax_ws2/devel/include/baymax_msgs/Velocities.h
+ /home/khaled/baymax_ws2/devel/include/baymax_msgs/baymaxPose.h
  /home/khaled/baymax_ws2/src/baymaxrobot/src/baymax_base_node.cpp
  /opt/ros/kinetic/include/geometry_msgs/Point.h
  /opt/ros/kinetic/include/geometry_msgs/PointStamped.h

@@ -7,5 +7,7 @@
    "PID"
    "<VELOCITIES>"
    "VELOCITIES"
+   "<BAYMAXPOSE>"
+   "BAYMAXPOSE"
   ))
 

@@ -22,6 +22,22 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
+/home/khaled/baymax_ws2/devel/include/baymax_msgs/baymaxPose.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/khaled/baymax_ws2/src/baymaxrobot/src/baymax_base_node.cpp
 ros/ros.h
 -
@@ -30,6 +46,8 @@ tf/transform_broadcaster.h
 nav_msgs/Odometry.h
 -
 baymax_msgs/Velocities.h
+-
+baymax_msgs/baymaxPose.h
 -
 sensor_msgs/Imu.h
 -

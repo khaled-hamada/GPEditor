@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/khaled/baymax_ws2/build
 include baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_lisp.dir/progress.make
 
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_lisp: /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/Velocities.lisp
+baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_lisp: /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/baymaxPose.lisp
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_lisp: /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/PID.lisp
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_lisp: /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/Imu.lisp
 
@@ -63,19 +64,25 @@ baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_lisp: /home/khaled/baymax_w
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from baymax_msgs/Velocities.msg"
 	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg
 
+/home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/baymaxPose.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/baymaxPose.lisp: /home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from baymax_msgs/baymaxPose.msg"
+	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg
+
 /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/PID.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/PID.lisp: /home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from baymax_msgs/PID.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from baymax_msgs/PID.msg"
 	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg
 
 /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/Imu.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/Imu.lisp: /home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg
 /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/Imu.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from baymax_msgs/Imu.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from baymax_msgs/Imu.msg"
 	cd /home/khaled/baymax_ws2/build/baymax_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg
 
 baymax_msgs_generate_messages_lisp: baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_lisp
 baymax_msgs_generate_messages_lisp: /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/Velocities.lisp
+baymax_msgs_generate_messages_lisp: /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/baymaxPose.lisp
 baymax_msgs_generate_messages_lisp: /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/PID.lisp
 baymax_msgs_generate_messages_lisp: /home/khaled/baymax_ws2/devel/share/common-lisp/ros/baymax_msgs/msg/Imu.lisp
 baymax_msgs_generate_messages_lisp: baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_lisp.dir/build.make

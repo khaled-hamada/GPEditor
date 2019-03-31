@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg;/home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg;/home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg"
+messages_str = "/home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg;/home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg;/home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg;/home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg"
 services_str = ""
 pkg_name = "baymax_msgs"
 dependencies_str = "std_msgs;geometry_msgs"

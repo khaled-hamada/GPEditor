@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/khaled/baymax_ws2/build
 include baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_cpp.dir/progress.make
 
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_cpp: /home/khaled/baymax_ws2/devel/include/baymax_msgs/Velocities.h
+baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_cpp: /home/khaled/baymax_ws2/devel/include/baymax_msgs/baymaxPose.h
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_cpp: /home/khaled/baymax_ws2/devel/include/baymax_msgs/PID.h
 baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_cpp: /home/khaled/baymax_ws2/devel/include/baymax_msgs/Imu.h
 
@@ -64,21 +65,28 @@ baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_cpp: /home/khaled/baymax_ws
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from baymax_msgs/Velocities.msg"
 	cd /home/khaled/baymax_ws2/src/baymax_msgs && /home/khaled/baymax_ws2/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/Velocities.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/include/baymax_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
+/home/khaled/baymax_ws2/devel/include/baymax_msgs/baymaxPose.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/khaled/baymax_ws2/devel/include/baymax_msgs/baymaxPose.h: /home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg
+/home/khaled/baymax_ws2/devel/include/baymax_msgs/baymaxPose.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from baymax_msgs/baymaxPose.msg"
+	cd /home/khaled/baymax_ws2/src/baymax_msgs && /home/khaled/baymax_ws2/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/baymaxPose.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/include/baymax_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+
 /home/khaled/baymax_ws2/devel/include/baymax_msgs/PID.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/khaled/baymax_ws2/devel/include/baymax_msgs/PID.h: /home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg
 /home/khaled/baymax_ws2/devel/include/baymax_msgs/PID.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from baymax_msgs/PID.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from baymax_msgs/PID.msg"
 	cd /home/khaled/baymax_ws2/src/baymax_msgs && /home/khaled/baymax_ws2/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/PID.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/include/baymax_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/khaled/baymax_ws2/devel/include/baymax_msgs/Imu.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/khaled/baymax_ws2/devel/include/baymax_msgs/Imu.h: /home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg
 /home/khaled/baymax_ws2/devel/include/baymax_msgs/Imu.h: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
 /home/khaled/baymax_ws2/devel/include/baymax_msgs/Imu.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from baymax_msgs/Imu.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from baymax_msgs/Imu.msg"
 	cd /home/khaled/baymax_ws2/src/baymax_msgs && /home/khaled/baymax_ws2/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/khaled/baymax_ws2/src/baymax_msgs/msg/Imu.msg -Ibaymax_msgs:/home/khaled/baymax_ws2/src/baymax_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baymax_msgs -o /home/khaled/baymax_ws2/devel/include/baymax_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 baymax_msgs_generate_messages_cpp: baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_cpp
 baymax_msgs_generate_messages_cpp: /home/khaled/baymax_ws2/devel/include/baymax_msgs/Velocities.h
+baymax_msgs_generate_messages_cpp: /home/khaled/baymax_ws2/devel/include/baymax_msgs/baymaxPose.h
 baymax_msgs_generate_messages_cpp: /home/khaled/baymax_ws2/devel/include/baymax_msgs/PID.h
 baymax_msgs_generate_messages_cpp: /home/khaled/baymax_ws2/devel/include/baymax_msgs/Imu.h
 baymax_msgs_generate_messages_cpp: baymax_msgs/CMakeFiles/baymax_msgs_generate_messages_cpp.dir/build.make
