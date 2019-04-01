@@ -94,7 +94,7 @@ int main(int argc, char** argv){
 		 delta_x = 0;
 	else
 		 delta_x = (linear_velocity_x * cos(theta) ) * g_vel_dt; //m
-	if( (fabs(theta) < .2) || (fabs(theta)  > (2 * PI - .2) ) )
+	if( (fabs(theta) < .15) || (fabs(theta)  > (2 * PI - .1) ) )
        		 delta_y = 0; //m
 	else 
 		 delta_y = (linear_velocity_x * sin(theta) ) * g_vel_dt; //m
@@ -122,7 +122,7 @@ int main(int argc, char** argv){
 		last_theta = theta ; */
 		//theta  = ( theta / 6.85) * (2 * PI);
 		//theta = std::fmod(theta , 2 * M_PI);
-		theta = fmod((theta + PI), (2 * PI)) - PI;
+		//theta = fmod((theta + PI), (2 * PI)) - PI;
 		last_theta = theta ;
 
 	}
