@@ -34,7 +34,7 @@ void IMUCallback( const sensor_msgs::Imu& imu){
     //callback every time the robot's angular velocity is received
     ros::Time current_time = ros::Time::now();
     //this block is to filter out imu noise
-    if(imu.angular_velocity.z > -0.03 && imu.angular_velocity.z < 0.03)
+    if(imu.angular_velocity.z > -0.03  &&  imu.angular_velocity.z < 0.03)
     {
      	  g_imu_z = 0.00;
     }
@@ -97,9 +97,9 @@ int main(int argc, char** argv){
 		//theta = std::fmod(theta , 2 * M_PI);
 	}*/
 
-	// the drift is .55 for each 2 * Pi so we will subtract it as  .55/2*PI
-	if (fabs(theta - last_theta) > 0.125){
-		if(fabs(last_theta) > fabs(theta)){
+	// the drift is .55 for each 2 Pi so we will subtract it as  .55/2*PI
+	if (fabs(theta - last_theta) > 0.2){
+		if(fabs(last_theta - theta ) >= 5.0){
 			theta = theta - ((.0875 * theta) );
 			last_theta = theta ;
 		}
@@ -107,6 +107,8 @@ int main(int argc, char** argv){
 			theta = theta - ((.0875 * (theta - last_theta))  );
 			last_theta = theta ; 
 		}
+		/*theta = theta - fabs( (.0875 * (theta - last_theta)) );
+		last_theta = theta ; */
 		//theta  = ( theta / 6.85) * (2 * PI);
 		//theta = std::fmod(theta , 2 * M_PI);
 	}
