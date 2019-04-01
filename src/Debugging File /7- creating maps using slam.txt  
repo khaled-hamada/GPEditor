@@ -22,7 +22,7 @@ Run rviz:
 
 
 3 Saving the map
-rosrun map_server map_saver -f ~/linorobot_ws/src/linorobot/maps/map
+rosrun map_server map_saver -f ~/baymaxrobot_ws2/src/baymaxrobot/maps/map
 
 Check if map.pgm and map.yaml has been saved:
 

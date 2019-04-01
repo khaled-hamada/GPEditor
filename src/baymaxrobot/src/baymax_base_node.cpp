@@ -68,6 +68,8 @@ int main(int argc, char** argv){
     double theta = 0.0;
     // just for deugging 
     double last_theta = 0.0;
+    double delta_x = 0;
+    double delta_y = 0;
 
     ros::Rate r(rate);
     while(n.ok()){
@@ -85,8 +87,17 @@ int main(int argc, char** argv){
 
         //calculate angular displacement  θ = ω * t
         double delta_theta = angular_velocity * g_imu_dt; //radians
-        double delta_x = (linear_velocity_x * cos(theta) - linear_velocity_y * sin(theta)) * g_vel_dt; //m
-        double delta_y = (linear_velocity_x * sin(theta) + linear_velocity_y * cos(theta)) * g_vel_dt; //m
+	
+	
+        if( (fabs(theta) > (.45 * PI) && fabs(theta) < (.55 * PI))  || 
+		(fabs(theta) > (1.45 * PI) && fabs(theta) < (1.55 * PI)))
+		 delta_x = 0;
+	else
+		 delta_x = (linear_velocity_x * cos(theta) ) * g_vel_dt; //m
+	if( (fabs(theta) < .2) || (fabs(theta)  > (2 * PI - .2) ) )
+       		 delta_y = 0; //m
+	else 
+		 delta_y = (linear_velocity_x * sin(theta) ) * g_vel_dt; //m
 
         //calculate current position of the robot
         x_pos += delta_x;
@@ -99,18 +110,21 @@ int main(int argc, char** argv){
 
 	// the drift is .55 for each 2 Pi so we will subtract it as  .55/2*PI
 	if (fabs(theta - last_theta) > 0.2){
-		if(fabs(last_theta - theta ) >= 5.0){
-			theta = theta - ((.0875 * theta) );
-			last_theta = theta ;
+		if(fabs(last_theta - theta ) >= 2.5){
+			theta = theta - ((.075 * theta) );
+			
 		}
 		else{
-			theta = theta - ((.0875 * (theta - last_theta))  );
-			last_theta = theta ; 
+			theta = theta - ((.075 * (theta - last_theta))  );
+			
 		}
 		/*theta = theta - fabs( (.0875 * (theta - last_theta)) );
 		last_theta = theta ; */
 		//theta  = ( theta / 6.85) * (2 * PI);
 		//theta = std::fmod(theta , 2 * M_PI);
+		theta = fmod((theta + PI), (2 * PI)) - PI;
+		last_theta = theta ;
+
 	}
 	//there is always an offset between .3 to .55 
 	/*if( fabs(theta) >= (2 * PI + 0.55)){
