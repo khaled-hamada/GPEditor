@@ -8,6 +8,7 @@ project(baymaxrobot)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  actionlib	
   baymax_msgs
   geometry_msgs
   nav_msgs
@@ -18,13 +19,14 @@ find_package(catkin REQUIRED COMPONENTS
   tf2
   tf2_ros
   tf 
+  move_base_msgs
 )
 
 
 catkin_package(
   #INCLUDE_DIRS include
   LIBRARIES baymaxrobot
-  CATKIN_DEPENDS roscpp rospy tf2 tf2_ros nav_msgs baymax_msgs geometry_msgs sensor_msgs std_msgs tf
+  CATKIN_DEPENDS roscpp rospy tf2 tf2_ros nav_msgs baymax_msgs geometry_msgs sensor_msgs std_msgs tf  actionlib move_base_msgs
   DEPENDS system_lib
 )
 
@@ -38,8 +40,10 @@ include_directories(
 )
 
 
-add_executable(baymax_base_node src/baymax_base_node.cpp)
-target_link_libraries(baymax_base_node  ${catkin_LIBRARIES})
+add_executable(baymax_base_node src/baymax_base_node.cpp   )
+#add_executable(go_to_goal  src/go_to_goal.cpp )
+target_link_libraries(baymax_base_node   ${catkin_LIBRARIES})
+#target_link_libraries(go_to_goal ${catkin_LIBRARIES})
 
 #############
 ## Install ##

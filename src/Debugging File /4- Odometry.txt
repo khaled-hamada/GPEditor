@@ -93,21 +93,6 @@ FR_WHEELS_DISTANCE = distance between front and rear wheels. Ignore this if you'
 
 
 
-///odometry .rviz
-
-
-
-
-sform (-nan -nan -nan -nan)
-[ERROR] [1553697958.910949083]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of a nan value in the transform (0.000000 0.000000 0.000000) (-nan -nan -nan -nan)
-[ERROR] [1553697958.911091427]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of an invalid quaternion in the transform (-nan -nan -nan -nan)
-[ERROR] [1553697958.963181141]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of a nan value in the transform (0.000000 0.000000 0.000000) (-nan -nan -nan -nan)
-[ERROR] [1553697958.963246351]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of an invalid quaternion in the transform (-nan -nan -nan -nan)
-[ERROR] [1553697959.020233320]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of a nan value in the transform (0.000000 0.000000 0.000000) (-nan -nan -nan -nan)
-[ERROR] [1553697959.020289073]: Ignoring transform for child_frame_id "imu_link" from authority "unknown_publisher" because of an invalid quaternion in the transform (-nan -nan -nan -nan)
-
-
-
 34.12
 34.5
 
