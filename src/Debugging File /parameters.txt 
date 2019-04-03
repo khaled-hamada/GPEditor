@@ -1,4 +1,7 @@
  
+
+see google group Odometry Topic 
+
 wheel		y_dis		pid		x_error		y_error		theta 	
 .116		.42		.5 .15 .1	.001		.22		.2200002
 

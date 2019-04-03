@@ -1,0 +1,16 @@
+
+<launch>
+	
+    
+    <include file="$(find baymaxrobot)/launch/bringup.launch" />
+
+    <include file="$(find baymaxrobot)/launch/navigate.launch" />
+
+
+    <!-- include file="$(find baymax_visualize)/rviz/slam.rviz" / --> 
+    <node pkg="baymax_visualize" name="slam" type="slam.rviz" output="screen">
+    </node>
+
+</launch>
+
+

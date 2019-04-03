@@ -1,0 +1,17 @@
+1- edit amcl depeding on chef bot and amcl tutorial ROS 
+especially initial pose 
+1.1 
+http://wiki.ros.org/amcl
+1.2
+http://wiki.ros.org/navigation/Troubleshooting
+1.3
+http://wiki.ros.org/navigation/Tutorials/Navigation%20Tuning%20Guide
+
+
+2- go to goal interface 
+
+
+3- add multiple src files .cpp to cmakelist 
+
+4-UltraSonic with buzzer Sensor 
+ 
