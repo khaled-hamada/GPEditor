@@ -103,6 +103,7 @@
 /home/khaled/baymax_ws2/build/baymaxrobot/CMakeFiles/list_install_components.dir
 /home/khaled/baymax_ws2/build/baymaxrobot/CMakeFiles/test.dir
 /home/khaled/baymax_ws2/build/baymaxrobot/CMakeFiles/install/strip.dir
+/home/khaled/baymax_ws2/build/baymaxrobot/CMakeFiles/send_goal.dir
 /home/khaled/baymax_ws2/build/baymaxrobot/CMakeFiles/baymax_base_node.dir
 /home/khaled/baymax_ws2/build/baymaxrobot/CMakeFiles/tf_generate_messages_py.dir
 /home/khaled/baymax_ws2/build/baymaxrobot/CMakeFiles/tf_generate_messages_nodejs.dir

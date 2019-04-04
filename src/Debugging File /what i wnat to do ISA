@@ -1,5 +1,7 @@
 1- edit amcl depeding on chef bot and amcl tutorial ROS 
-especially initial pose 
+especially initial pose (nothing found on this topic )
+you can do it by two ways  amcl.launch or using rviz pose estiamtion 
+
 1.1 
 http://wiki.ros.org/amcl
 1.2
@@ -7,11 +9,22 @@ http://wiki.ros.org/navigation/Troubleshooting
 1.3
 http://wiki.ros.org/navigation/Tutorials/Navigation%20Tuning%20Guide
 
+1.4 
+edit footprint and inflation radius  --------------- (completed) 
+--------------   completed ----------------
+###########################################################33
 
 2- go to goal interface 
 
+2- try ahmed code for MPU 
 
-3- add multiple src files .cpp to cmakelist 
+######################################################################################
+3- add multiple src files .cpp to cmakelist (completed each cpp file has its own target link and add executable lines )
+########################################################################################
 
 4-UltraSonic with buzzer Sensor 
- 
+
+5- localization package 
+http://docs.ros.org/kinetic/api/robot_localization/html/index.html
+
+6- actionlib 

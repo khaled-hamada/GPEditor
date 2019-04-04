@@ -8,7 +8,7 @@ import sys
 #move_base_msgs
 from move_base_msgs.msg import *
 
-def simple_move(x,w):
+def simple_move(x, y, w):
 
     rospy.init_node('simple_move')
 
@@ -20,11 +20,13 @@ def simple_move(x,w):
 
     #use self?
     #set goal
- 
+
     rospy.loginfo("Set X = "+x)
+    rospy.loginfo("Set Y = "+y)
     rospy.loginfo("Set W = "+w)
 
     goal.target_pose.pose.position.x = float(x)
+    goal.target_pose.pose.position.y = float(y)
     goal.target_pose.pose.orientation.w = float(w)
     goal.target_pose.header.frame_id = 'first_move'
     goal.target_pose.header.stamp = rospy.Time.now()
@@ -51,6 +53,6 @@ def simple_move(x,w):
 
 if __name__ == '__main__':
     try:
-        simple_move(sys.argv[1],sys.argv[2])
+        simple_move(sys.argv[1], sys.argv[2], sys.argv[3])
     except rospy.ROSInterruptException:
         print "Keyboard Interrupt"

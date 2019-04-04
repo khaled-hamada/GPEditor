@@ -52,21 +52,11 @@ After localizing, click "2D Nav Goal".
 Pinpoint your desired location on the map and drag towards the direction you want your robot to be heading at once it has reached its goal.
 
 
-//errors 
-1-
-Aborting because a valid plan could not be found. Even after executing all recovery behaviors
-
-2-
-[ERROR] [1554272247.514142093]: Failed to get a plan.
-
-3- 
-[ WARN] [1554272231.486480126]: Clearing costmap to unstuck robot (1.840000m).
-4-
-
-[ WARN] [1554272220.484153446]: Rotate recovery behavior started.
-
-5-
 
 
+####################################################################3333333
+TF 
+1- rosrun tf view_frames
+evince frames.pdf
 
 

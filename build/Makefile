@@ -855,6 +855,19 @@ do_calib/fast:
 .PHONY : do_calib/fast
 
 #=============================================================================
+# Target rules for targets named send_goal
+
+# Build rule for target.
+send_goal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 send_goal
+.PHONY : send_goal
+
+# fast build rule for target.
+send_goal/fast:
+	$(MAKE) -f baymaxrobot/CMakeFiles/send_goal.dir/build.make baymaxrobot/CMakeFiles/send_goal.dir/build
+.PHONY : send_goal/fast
+
+#=============================================================================
 # Target rules for targets named baymax_base_node
 
 # Build rule for target.
@@ -1323,6 +1336,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... do_calib"
+	@echo "... send_goal"
 	@echo "... baymax_base_node"
 	@echo "... tf_generate_messages_py"
 	@echo "... tf_generate_messages_nodejs"

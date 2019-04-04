@@ -41,9 +41,10 @@ include_directories(
 
 
 add_executable(baymax_base_node src/baymax_base_node.cpp   )
-#add_executable(go_to_goal  src/go_to_goal.cpp )
+add_executable(send_goal src/go_to_goal.cpp)
+
 target_link_libraries(baymax_base_node   ${catkin_LIBRARIES})
-#target_link_libraries(go_to_goal ${catkin_LIBRARIES})
+target_link_libraries(send_goal ${catkin_LIBRARIES}  )
 
 #############
 ## Install ##

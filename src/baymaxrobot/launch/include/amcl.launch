@@ -4,6 +4,11 @@
         <param name="gui_publish_rate" value="10.0"/> <!-- Maximum rate (Hz) at which scans and paths are published for visualization, -1.0 to disable. -->
         <param name="kld_err" value="0.05"/>
         <param name="kld_z" value="0.99"/>
+
+	<arg name="initial_pose_x" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  	<arg name="initial_pose_y" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  	<arg name="initial_pose_a" default="0.0"/>
+
         <param name="laser_lambda_short" value="0.1"/>
         <param name="laser_likelihood_max_dist" value="2.0"/>
         <param name="laser_max_beams" value="60"/>	

@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+baymaxrobot/CMakeFiles/send_goal.dir/rule:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 baymaxrobot/CMakeFiles/send_goal.dir/rule
+.PHONY : baymaxrobot/CMakeFiles/send_goal.dir/rule
+
+# Convenience name for target.
+send_goal: baymaxrobot/CMakeFiles/send_goal.dir/rule
+
+.PHONY : send_goal
+
+# fast build rule for target.
+send_goal/fast:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f baymaxrobot/CMakeFiles/send_goal.dir/build.make baymaxrobot/CMakeFiles/send_goal.dir/build
+.PHONY : send_goal/fast
+
+# Convenience name for target.
 baymaxrobot/CMakeFiles/baymax_base_node.dir/rule:
 	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 baymaxrobot/CMakeFiles/baymax_base_node.dir/rule
 .PHONY : baymaxrobot/CMakeFiles/baymax_base_node.dir/rule
@@ -657,6 +672,33 @@ src/baymax_base_node.cpp.s:
 	cd /home/khaled/baymax_ws2/build && $(MAKE) -f baymaxrobot/CMakeFiles/baymax_base_node.dir/build.make baymaxrobot/CMakeFiles/baymax_base_node.dir/src/baymax_base_node.cpp.s
 .PHONY : src/baymax_base_node.cpp.s
 
+src/go_to_goal.o: src/go_to_goal.cpp.o
+
+.PHONY : src/go_to_goal.o
+
+# target to build an object file
+src/go_to_goal.cpp.o:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f baymaxrobot/CMakeFiles/send_goal.dir/build.make baymaxrobot/CMakeFiles/send_goal.dir/src/go_to_goal.cpp.o
+.PHONY : src/go_to_goal.cpp.o
+
+src/go_to_goal.i: src/go_to_goal.cpp.i
+
+.PHONY : src/go_to_goal.i
+
+# target to preprocess a source file
+src/go_to_goal.cpp.i:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f baymaxrobot/CMakeFiles/send_goal.dir/build.make baymaxrobot/CMakeFiles/send_goal.dir/src/go_to_goal.cpp.i
+.PHONY : src/go_to_goal.cpp.i
+
+src/go_to_goal.s: src/go_to_goal.cpp.s
+
+.PHONY : src/go_to_goal.s
+
+# target to generate assembly for a file
+src/go_to_goal.cpp.s:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f baymaxrobot/CMakeFiles/send_goal.dir/build.make baymaxrobot/CMakeFiles/send_goal.dir/src/go_to_goal.cpp.s
+.PHONY : src/go_to_goal.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -666,6 +708,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... test"
 	@echo "... install/strip"
+	@echo "... send_goal"
 	@echo "... baymax_base_node"
 	@echo "... tf_generate_messages_py"
 	@echo "... tf_generate_messages_nodejs"
@@ -704,6 +747,9 @@ help:
 	@echo "... src/baymax_base_node.o"
 	@echo "... src/baymax_base_node.i"
 	@echo "... src/baymax_base_node.s"
+	@echo "... src/go_to_goal.o"
+	@echo "... src/go_to_goal.i"
+	@echo "... src/go_to_goal.s"
 .PHONY : help
 
 

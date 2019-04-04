@@ -2022,11 +2022,13 @@ clean: imu_calib/CMakeFiles/do_calib.dir/clean
 # Directory level rules for directory baymaxrobot
 
 # Convenience name for "all" pass in the directory.
+baymaxrobot/all: baymaxrobot/CMakeFiles/send_goal.dir/all
 baymaxrobot/all: baymaxrobot/CMakeFiles/baymax_base_node.dir/all
 
 .PHONY : baymaxrobot/all
 
 # Convenience name for "clean" pass in the directory.
+baymaxrobot/clean: baymaxrobot/CMakeFiles/send_goal.dir/clean
 baymaxrobot/clean: baymaxrobot/CMakeFiles/baymax_base_node.dir/clean
 baymaxrobot/clean: baymaxrobot/CMakeFiles/tf_generate_messages_py.dir/clean
 baymaxrobot/clean: baymaxrobot/CMakeFiles/tf_generate_messages_nodejs.dir/clean
@@ -2065,6 +2067,43 @@ baymaxrobot/clean: baymaxrobot/CMakeFiles/tf_generate_messages_cpp.dir/clean
 baymaxrobot/preinstall:
 
 .PHONY : baymaxrobot/preinstall
+
+#=============================================================================
+# Target rules for target baymaxrobot/CMakeFiles/send_goal.dir
+
+# All Build rule for target.
+baymaxrobot/CMakeFiles/send_goal.dir/all:
+	$(MAKE) -f baymaxrobot/CMakeFiles/send_goal.dir/build.make baymaxrobot/CMakeFiles/send_goal.dir/depend
+	$(MAKE) -f baymaxrobot/CMakeFiles/send_goal.dir/build.make baymaxrobot/CMakeFiles/send_goal.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/khaled/baymax_ws2/build/CMakeFiles --progress-num=44,45 "Built target send_goal"
+.PHONY : baymaxrobot/CMakeFiles/send_goal.dir/all
+
+# Include target in all.
+all: baymaxrobot/CMakeFiles/send_goal.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+baymaxrobot/CMakeFiles/send_goal.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/khaled/baymax_ws2/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 baymaxrobot/CMakeFiles/send_goal.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/khaled/baymax_ws2/build/CMakeFiles 0
+.PHONY : baymaxrobot/CMakeFiles/send_goal.dir/rule
+
+# Convenience name for target.
+send_goal: baymaxrobot/CMakeFiles/send_goal.dir/rule
+
+.PHONY : send_goal
+
+# clean rule for target.
+baymaxrobot/CMakeFiles/send_goal.dir/clean:
+	$(MAKE) -f baymaxrobot/CMakeFiles/send_goal.dir/build.make baymaxrobot/CMakeFiles/send_goal.dir/clean
+.PHONY : baymaxrobot/CMakeFiles/send_goal.dir/clean
+
+# clean rule for target.
+clean: baymaxrobot/CMakeFiles/send_goal.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target baymaxrobot/CMakeFiles/baymax_base_node.dir

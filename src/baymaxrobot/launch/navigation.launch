@@ -8,8 +8,8 @@
 
 
     <!-- include file="$(find baymax_visualize)/rviz/slam.rviz" / --> 
-    <node pkg="baymax_visualize" name="slam" type="slam.rviz" output="screen">
-    </node>
+    <!-- node pkg="baymax_visualize" name="slam" type="slam.rviz" output="screen" -->
+    <!-- /node -->
 
 </launch>
 
