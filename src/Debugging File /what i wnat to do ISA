@@ -23,6 +23,8 @@ edit footprint and inflation radius  --------------- (completed)
 ########################################################################################
 
 4-UltraSonic with buzzer Sensor 
+4.1 first if there is anyway to edit navig. stack to deal with this sensor data 
+4.2 if not , build our code using buzzer 
 
 5- localization package 
 http://docs.ros.org/kinetic/api/robot_localization/html/index.html
