@@ -1,0 +1,12 @@
+
+<launch>
+	
+    <arg name = "file" />
+
+    <node pkg="baymaxrobot" name="go_to_goal" type="go_to_goal2.py"  args ="$(find baymaxrobot)/motion_files/$(arg file)" output="screen">
+	
+    </node>
+
+</launch>
+
+

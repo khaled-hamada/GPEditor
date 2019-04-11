@@ -20,9 +20,9 @@ def simple_move(x, y, w):
     #use self?
     #set goal
 
-    rospy.loginfo("Set X = "+x)
-    rospy.loginfo("Set Y = "+y)
-    rospy.loginfo("Set W = "+w)
+    rospy.loginfo("Set X = %f" %x)
+    rospy.loginfo("Set Y = %f" %y)
+    rospy.loginfo("Set W = %f" %w)
 
     goal.target_pose.pose.position.x = float(x)
     goal.target_pose.pose.position.y = float(y)
@@ -51,9 +51,25 @@ def simple_move(x, y, w):
 
 
 if __name__ == '__main__':
+    x = y = theta = 0.0
     try:
-      	result =  simple_move(sys.argv[1], sys.argv[2], sys.argv[3])
-	rospy.loginfo("%s" result)
+      	args =  rospy.myargv(argv= sys.argv)
+        if len(args) != 2 :
+            print "Error no file provided "
+            sys.exit(1)
+        #read about how to extract data from a file
+        m_data_file_name = args[1]
+        file_data = open(m_data_file_name, 'r')
+        for line in file_data :
+            data = line.split('\t')
+            x = float(data[0])
+            y = float(data[1])
+            theta = float(data[2])
+            print "location is x = %f , y = %f , theta = %f " %(x,y,theta)
+
+        #after extracting data print it to console to ensure that we are doing it right
+        result = simple_move(x, y, theta)
+        rospy.loginfo("%s" %result)
     except rospy.ROSInterruptException:
 	rospy.loginfo("failed to send the robot to the required location or goal ")
         print "Keyboard Interrupt"
