@@ -56,6 +56,28 @@ CMAKE_BINARY_DIR = /home/khaled/baymax_ws2/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -68,17 +90,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -89,17 +100,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -166,19 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+sensor_msgs_generate_messages_eus: imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_cpp
+.PHONY : sensor_msgs_generate_messages_eus
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 imu_calib/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
@@ -196,34 +196,64 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-imu_calib/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : imu_calib/CMakeFiles/roscpp_generate_messages_py.dir/rule
+imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_py: imu_calib/CMakeFiles/roscpp_generate_messages_py.dir/rule
+sensor_msgs_generate_messages_lisp: imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : roscpp_generate_messages_py
+.PHONY : sensor_msgs_generate_messages_lisp
 
 # fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/roscpp_generate_messages_py.dir/build.make imu_calib/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+sensor_msgs_generate_messages_cpp: imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_eus
+.PHONY : sensor_msgs_generate_messages_cpp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+imu_calib/CMakeFiles/accel_calib.dir/rule:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/accel_calib.dir/rule
+.PHONY : imu_calib/CMakeFiles/accel_calib.dir/rule
+
+# Convenience name for target.
+accel_calib: imu_calib/CMakeFiles/accel_calib.dir/rule
+
+.PHONY : accel_calib
+
+# fast build rule for target.
+accel_calib/fast:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/accel_calib.dir/build.make imu_calib/CMakeFiles/accel_calib.dir/build
+.PHONY : accel_calib/fast
+
+# Convenience name for target.
+imu_calib/CMakeFiles/do_calib.dir/rule:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/do_calib.dir/rule
+.PHONY : imu_calib/CMakeFiles/do_calib.dir/rule
+
+# Convenience name for target.
+do_calib: imu_calib/CMakeFiles/do_calib.dir/rule
+
+.PHONY : do_calib
+
+# fast build rule for target.
+do_calib/fast:
+	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/do_calib.dir/build.make imu_calib/CMakeFiles/do_calib.dir/build
+.PHONY : do_calib/fast
 
 # Convenience name for target.
 imu_calib/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
@@ -254,186 +284,6 @@ apply_calib: imu_calib/CMakeFiles/apply_calib.dir/rule
 apply_calib/fast:
 	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/apply_calib.dir/build.make imu_calib/CMakeFiles/apply_calib.dir/build
 .PHONY : apply_calib/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : imu_calib/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: imu_calib/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make imu_calib/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : imu_calib/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: imu_calib/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/roscpp_generate_messages_eus.dir/build.make imu_calib/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make imu_calib/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : imu_calib/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: imu_calib/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make imu_calib/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/accel_calib.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/accel_calib.dir/rule
-.PHONY : imu_calib/CMakeFiles/accel_calib.dir/rule
-
-# Convenience name for target.
-accel_calib: imu_calib/CMakeFiles/accel_calib.dir/rule
-
-.PHONY : accel_calib
-
-# fast build rule for target.
-accel_calib/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/accel_calib.dir/build.make imu_calib/CMakeFiles/accel_calib.dir/build
-.PHONY : accel_calib/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : imu_calib/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: imu_calib/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make imu_calib/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make imu_calib/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make imu_calib/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make imu_calib/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-imu_calib/CMakeFiles/do_calib.dir/rule:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f CMakeFiles/Makefile2 imu_calib/CMakeFiles/do_calib.dir/rule
-.PHONY : imu_calib/CMakeFiles/do_calib.dir/rule
-
-# Convenience name for target.
-do_calib: imu_calib/CMakeFiles/do_calib.dir/rule
-
-.PHONY : do_calib
-
-# fast build rule for target.
-do_calib/fast:
-	cd /home/khaled/baymax_ws2/build && $(MAKE) -f imu_calib/CMakeFiles/do_calib.dir/build.make imu_calib/CMakeFiles/do_calib.dir/build
-.PHONY : do_calib/fast
 
 src/accel_calib/accel_calib.o: src/accel_calib/accel_calib.cpp.o
 
@@ -576,29 +426,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... test"
+	@echo "... accel_calib"
+	@echo "... install"
+	@echo "... do_calib"
+	@echo "... edit_cache"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... apply_calib"
-	@echo "... edit_cache"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... accel_calib"
-	@echo "... test"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... list_install_components"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... do_calib"
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... src/accel_calib/accel_calib.o"

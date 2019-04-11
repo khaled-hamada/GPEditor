@@ -120,6 +120,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/khaled/baymax_ws2/build/baymax_visualize/cmake_install.cmake")
   include("/home/khaled/baymax_ws2/build/baymax_msgs/cmake_install.cmake")
   include("/home/khaled/baymax_ws2/build/baymax_udev/cmake_install.cmake")
+  include("/home/khaled/baymax_ws2/build/actionlib_t/cmake_install.cmake")
+  include("/home/khaled/baymax_ws2/build/actionlib_tutorials/cmake_install.cmake")
   include("/home/khaled/baymax_ws2/build/imu_calib/cmake_install.cmake")
   include("/home/khaled/baymax_ws2/build/baymaxrobot/cmake_install.cmake")
 

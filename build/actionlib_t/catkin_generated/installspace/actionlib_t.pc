@@ -1,0 +1,8 @@
+prefix=/home/khaled/baymax_ws2/install
+
+Name: actionlib_t
+Description: Description of actionlib_t
+Version: 0.0.0
+Cflags: -I/home/khaled/baymax_ws2/install/include
+Libs: -L/home/khaled/baymax_ws2/install/lib 
+Requires: actionlib_msgs actionlib

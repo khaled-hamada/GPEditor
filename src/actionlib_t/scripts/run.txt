@@ -1,0 +1,13 @@
+
+#server
+
+Run:
+roscore
+
+Then on a new terminal, the following command will run the action server.
+
+rosrun actionlib_t fib_server.py
+
+
+#client
+rosrun actionlib_t fib_client.py

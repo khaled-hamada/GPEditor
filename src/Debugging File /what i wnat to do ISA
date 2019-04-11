@@ -16,10 +16,19 @@ edit footprint and inflation radius  --------------- (completed)
 
 2- go to goal interface 
 
-2- try ahmed code for MPU 
+
+2.1
+http://wiki.ros.org/actionlib_tutorials/Tutorials/Writing%20a%20Simple%20Action%20Client%20%28Python%29
+
+2.2 
+http://wiki.ros.org/navigation/Tutorials/SendingSimpleGoals
+
+
+2.3 - try ahmed code for MPU 
 
 ######################################################################################
 3- add multiple src files .cpp to cmakelist (completed each cpp file has its own target link and add executable lines )
+------------------------------------ comleted -------------------
 ########################################################################################
 
 4-UltraSonic with buzzer Sensor 
@@ -28,3 +37,4 @@ edit footprint and inflation radius  --------------- (completed)
 http://docs.ros.org/kinetic/api/robot_localization/html/index.html
 
 6- actionlib 
+

@@ -1,0 +1,6 @@
+<launch>
+
+<node pkg="actionlib_t" name="client" type="fib_client.py" /> 
+<node pkg="actionlib_t" name="server" type="fib_server.py" />
+ 
+</launch>
