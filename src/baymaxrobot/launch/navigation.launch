@@ -1,10 +1,14 @@
 
 <launch>
 	
-    
+    <arg name = "file" />
     <include file="$(find baymaxrobot)/launch/bringup.launch" />
 
     <include file="$(find baymaxrobot)/launch/navigate.launch" />
+
+    <node pkg="baymaxrobot" name="go_to_goal" type="go_to_goal2.py"  args ="$(find baymaxrobot)/motion_files$(arg file)" output="screen">
+	
+    </node>
 
 </launch>
 

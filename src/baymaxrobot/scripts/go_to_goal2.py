@@ -52,6 +52,8 @@ def simple_move(x, y, w):
 
 if __name__ == '__main__':
     x = y = theta = 0.0
+    out_file = open("result2.txt",'w')
+    print >> out_file, "khaled osman "
     try:
       	args =  rospy.myargv(argv= sys.argv)
         if len(args) != 2 :
@@ -70,6 +72,13 @@ if __name__ == '__main__':
         #after extracting data print it to console to ensure that we are doing it right
         result = simple_move(x, y, theta)
         rospy.loginfo("%s" %result)
+
+        print >> out_file, "%s" %result
+        out_file.close()
     except rospy.ROSInterruptException:
-	rospy.loginfo("failed to send the robot to the required location or goal ")
-        print "Keyboard Interrupt"
+           rospy.loginfo("failed to send the robot to the required location or goal ")
+           print "Keyboard Interrupt"
+           print >> out_file, "failed to send the robot to the required location or goal"
+
+
+           out_file.close()
