@@ -40,6 +40,10 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
+
+
+#########################################################################################################3
+
 class Ui_Form(object):
 
     def setupUi(self, Form):
@@ -99,6 +103,7 @@ class Ui_Form(object):
         self.client = actionlib.SimpleActionClient('move_base',MoveBaseAction)
         self.goal = MoveBaseGoal()
 
+#########################################################################################################3
 
     def retranslateUi(self, Form):
         Form.setWindowTitle(_translate("Form", "Form", None))
@@ -114,6 +119,9 @@ class Ui_Form(object):
         self.pushButton_9.setText(_translate("Form", "save map ", None))
 
 
+
+#########################################################################################################3
+
     def update_position(self):
         self.location_no = self.spinBox.value()
     	self.current_location_position = location_position[self.location_no]
@@ -121,7 +129,7 @@ class Ui_Form(object):
         print 'got a new position to go to '
 
 
-#######################
+#########################################################################################################3
 # we will edit this as when we call go_to_goal we will pass it three arguments x,y and theta
     def go_to_goal(self):
         print 'go_to_goal'
@@ -162,6 +170,9 @@ class Ui_Form(object):
         print 'stop robot movement '
         self.client.cancel_all_goals()
 
+
+#########################################################################################################3
+
     def cancel_goal(self):
         print 'stop robot'
         self.client.cancel_all_goals()
@@ -180,27 +191,41 @@ class Ui_Form(object):
         print 'robot start running '
         #we will add & at the end of the line after debugging
         os.system("gnome-terminal  -x   roslaunch  baymaxrobot  navigation.launch ")
+        os.kill(os.getppid(), signal.SIGHUP)
+
+#########################################################################################################3
 
     def build_map(self):
         print 'build the map '
         #we will add & at the end of the line after debugging
         os.system("gnome-terminal  -x   roslaunch  baymaxrobot  mapping.launch  ")
+        os.kill(os.getppid(), signal.SIGHUP)
+
+#########################################################################################################3
+
+
     def save_map(self):
         print 'saving the map '
         #we will add & at the end of the line after debugging
         os.system("gnome-terminal  -x rosrun map_server map_saver -f /home/khaled/baymaxrobot_ws2/src/baymaxrobot/maps/map  ")
+        os.kill(os.getppid(), signal.SIGHUP)
+#########################################################################################################3
+
 
     #open telop only in a separete terminal
     def teleop(self):
         print 'moving the robot manually'
         os.system("gnome-terminal  -x   rosrun teleop_twist_keyboard teleop_twist_keyboard.py ")
+        os.kill(os.getppid(), signal.SIGHUP)
 
+#########################################################################################################3
 
     def shutdown(self):
 		os.kill(os.getppid(), signal.SIGHUP)
         #search how to close all opend terminal using a python script
 		print 'الروبوت غير متاح حاليا من فضلك روح وتعالا بكرة بدرى '
 
+#########################################################################################################3
 
 
 
