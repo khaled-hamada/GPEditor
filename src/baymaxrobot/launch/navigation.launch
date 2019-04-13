@@ -1,10 +1,15 @@
 
 <launch>
 	
-    
+    <arg name = "file" />
     <include file="$(find baymaxrobot)/launch/bringup.launch" />
 
     <include file="$(find baymaxrobot)/launch/navigate.launch" />
+
+     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find baymaxrobot)/rviz/navigate.rviz"/>
+    
+	
+    </node>
 
 </launch>
 
