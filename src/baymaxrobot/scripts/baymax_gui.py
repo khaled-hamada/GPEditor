@@ -190,16 +190,18 @@ class Ui_Form(object):
     def run_robot(self):
         print 'robot start running '
         #we will add & at the end of the line after debugging
-        os.system("gnome-terminal  -x   roslaunch  baymaxrobot  navigation.launch ")
-        os.kill(os.getppid(), signal.SIGHUP)
+        #os.system("gnome-terminal  -x   roslaunch  baymaxrobot  navigation.launch ")
+        os.system("roslaunch  baymaxrobot  navigation.launch &")
+        #os.kill(os.getppid(), signal.SIGHUP)
 
 #########################################################################################################3
 
     def build_map(self):
         print 'build the map '
         #we will add & at the end of the line after debugging
-        os.system("gnome-terminal  -x   roslaunch  baymaxrobot  mapping.launch  ")
-        os.kill(os.getppid(), signal.SIGHUP)
+        #os.system("gnome-terminal  -x   roslaunch  baymaxrobot  mapping.launch  ")
+        os.system("roslaunch  baymaxrobot  mapping.launch & ")
+        #os.kill(os.getppid(), signal.SIGHUP)
 
 #########################################################################################################3
 
@@ -208,7 +210,7 @@ class Ui_Form(object):
         print 'saving the map '
         #we will add & at the end of the line after debugging
         os.system("gnome-terminal  -x rosrun map_server map_saver -f /home/khaled/baymaxrobot_ws2/src/baymaxrobot/maps/map  ")
-        os.kill(os.getppid(), signal.SIGHUP)
+        #os.kill(os.getppid(), signal.SIGHUP)
 #########################################################################################################3
 
 
@@ -216,14 +218,16 @@ class Ui_Form(object):
     def teleop(self):
         print 'moving the robot manually'
         os.system("gnome-terminal  -x   rosrun teleop_twist_keyboard teleop_twist_keyboard.py ")
-        os.kill(os.getppid(), signal.SIGHUP)
+        #os.kill(os.getppid(), signal.SIGHUP)
 
 #########################################################################################################3
 
     def shutdown(self):
-		os.kill(os.getppid(), signal.SIGHUP)
         #search how to close all opend terminal using a python script
-		print 'الروبوت غير متاح حاليا من فضلك روح وتعالا بكرة بدرى '
+        print 'الروبوت غير متاح حاليا من فضلك روح وتعالا بكرة بدرى '
+        os.kill(os.getppid(), signal.SIGHUP)
+        #search how to close all opend terminal using a python script
+		#print 'الروبوت غير متاح حاليا من فضلك روح وتعالا بكرة بدرى '
 
 #########################################################################################################3
 
