@@ -23,6 +23,7 @@ Run rviz:
 
 3 Saving the map
 rosrun map_server map_saver -f ~/baymaxrobot_ws2/src/baymaxrobot/maps/map
+// rosrun map_server map_saver -f /home/khaled/baymaxrobot_ws2/src/baymaxrobot/maps/map
 
 Check if map.pgm and map.yaml has been saved:
 
