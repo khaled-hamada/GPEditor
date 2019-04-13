@@ -12,6 +12,7 @@ import actionlib
 from move_base_msgs.msg import *
 import time
 import os
+import signal
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
 
 from PyQt4 import QtCore, QtGui
@@ -187,7 +188,7 @@ class Ui_Form(object):
     def save_map(self):
         print 'saving the map '
         #we will add & at the end of the line after debugging
-        os.system("rosrun map_server map_saver -f /home/khaled/baymaxrobot_ws2/src/baymaxrobot/maps/map  ")
+        os.system("gnome-terminal  -x rosrun map_server map_saver -f /home/khaled/baymaxrobot_ws2/src/baymaxrobot/maps/map  ")
 
     #open telop only in a separete terminal
     def teleop(self):
@@ -196,7 +197,7 @@ class Ui_Form(object):
 
 
     def shutdown(self):
-		
+		os.kill(os.getppid(), signal.SIGHUP)
         #search how to close all opend terminal using a python script
 		print 'الروبوت غير متاح حاليا من فضلك روح وتعالا بكرة بدرى '
 
@@ -209,6 +210,7 @@ class Ui_Form(object):
 
 if __name__ == "__main__":
     import sys
+    os.system("roscore & ")
     rospy.init_node('robot_gui')
     app = QtGui.QApplication(sys.argv)
     Form = QtGui.QWidget()
