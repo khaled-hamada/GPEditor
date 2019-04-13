@@ -52,8 +52,8 @@ def simple_move(x, y, w):
 
 if __name__ == '__main__':
     x = y = theta = 0.0
-    out_file = open("result2.txt",'w')
-    print >> out_file, "khaled osman "
+    out_file = open("result.txt",'w')
+   # print >> out_file, "khaled osman "
     try:
       	args =  rospy.myargv(argv= sys.argv)
         if len(args) != 2 :

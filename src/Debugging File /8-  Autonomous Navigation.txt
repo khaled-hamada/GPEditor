@@ -60,3 +60,17 @@ TF
 evince frames.pdf
 
 
+
+## to get locations from map use this command , run this command near the place you want to get its locations from the map   
+
+ rosrun tf tf_echo /map /base_link
+
+
+#to write gui 
+1- see script in baymax robot 
+commands.py 
+2- se book from page 340 
+3- see scripts robot_gui.py in baymax robot 
+
+
+

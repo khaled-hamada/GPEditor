@@ -1,0 +1,54 @@
+###################################
+
+
+#to write gui 
+1- see script in baymax robot 
+commands.py 
+2- se book from page 340 
+3- see scripts robot_gui.py in baymax robot 
+
+##############################################
+
+
+
+Working with PyQt and PySide
+
+**** commands ** 
+1.  start 
+	designer-qt4 
+2.  Qt signals and slots
+	1. Drag and create a PushButton from Qt Designer to the empty Form.
+	2. Assign a slot for the button clicked event, which emits a signal called
+	clicked().
+	3. Save the designed UI file in the .ui extension.
+	4. Convert UI files to Python.
+	5. Write the definition of the custom slot.
+	6. Print the Hello World message inside the defined slot/function
+	 
+	 2. 
+	 	Select the clicked() signal from the left-hand side and click on the Edit... button
+		to create a new custom slot. When we click on the Edit... button, another
+		window will pop up to create a custom function. You can create a custom
+		function by clicking on the + symbol. We created a custom slot called message(),
+		as shown in the following screenshot:
+		
+		
+3. Converting a UI file into Python code
+	 pyuic4 -x in_file.ui -o out_file.py
+	 
+4.Adding a slot definition to PyQt code
+	The slot definition is created inside the Ui_Form() class. The following
+	steps insert the slot called message() into the Ui_Form() class.
+	The message() function definition is as follows:
+	def message(self):
+	print "Hello World"
+	This should be inserted as a function inside the Ui_Form() class. Also, change the
+	following line in the setupUi() function inside the Ui_Form() class:
+	QtCore.QObject.connect(self.pushButton, QtCore.SIGNAL(_fromUtf8("clicked()")),
+	Form.message)
+	The Form.message parameter should be replaced with the self.message parameter. The
+	preceding line connects the PushBbutton signal, clicked(), to the self.message()
+	slot that we already inserted in the Ui_Form() class.
+	
+	
+	
