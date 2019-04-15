@@ -14,11 +14,11 @@ import time
 import os
 import signal
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
-
+from geometry_msgs.msg import PoseStamped
 from PyQt4 import QtCore, QtGui
 
 location_position = dict()
-location_position[0] = (0.0, 0.0, 0.3)
+location_position[0] = (-0.031, 0.038, 0.3)
 location_position[1] = (0.599, 1.03, 1 )
 location_position[2] = (4.415, 0.645, 3.14 )
 location_position[3] = (7.409, 0.812, -3.14)
@@ -134,14 +134,17 @@ class Ui_Form(object):
     def go_to_goal(self):
         print 'go_to_goal'
         self.goal.target_pose.pose.position.x=float(self.current_location_position[0])
-    	self.goal.target_pose.pose.position.y=float(self.current_location_position[1])
+        self.goal.target_pose.pose.position.y=float(self.current_location_position[1])
         self.goal.target_pose.pose.position.z=0.0
         #rotation
         q = quaternion_from_euler(0, 0, self.current_location_position[2], 'sxyz')
-    	self.goal.target_pose.pose.orientation= q
+        self.goal.target_pose.pose.orientation.x = q[0]
+        self.goal.target_pose.pose.orientation.y = q[1]
+        self.goal.target_pose.pose.orientation.z = q[2]
+        self.goal.target_pose.pose.orientation.w = q[3]
 
-    	self.goal.target_pose.header.frame_id= 'map'
-    	self.goal.target_pose.header.stamp = rospy.Time.now()
+        self.goal.target_pose.header.frame_id= 'map'
+        self.goal.target_pose.header.stamp = rospy.Time.now()
         #start listner
         rospy.loginfo("Waiting for server")
         #self.client.wait_for_server()
@@ -209,7 +212,7 @@ class Ui_Form(object):
     def save_map(self):
         print 'saving the map '
         #we will add & at the end of the line after debugging
-        os.system("gnome-terminal  -x rosrun map_server map_saver -f /home/khaled/baymaxrobot_ws2/src/baymaxrobot/maps/map  ")
+        os.system("rosrun map_server map_saver -f ~/baymax_ws2/src/baymaxrobot/maps/hospital & ")
         #os.kill(os.getppid(), signal.SIGHUP)
 #########################################################################################################3
 
@@ -217,7 +220,7 @@ class Ui_Form(object):
     #open telop only in a separete terminal
     def teleop(self):
         print 'moving the robot manually'
-        os.system("gnome-terminal  -x   rosrun teleop_twist_keyboard teleop_twist_keyboard.py ")
+        os.system("gnome-terminal  -x rosrun teleop_twist_keyboard teleop_twist_keyboard.py ")
         #os.kill(os.getppid(), signal.SIGHUP)
 
 #########################################################################################################3
@@ -239,6 +242,9 @@ class Ui_Form(object):
 
 if __name__ == "__main__":
     import sys
+    #open serial port first
+    os.system("echo %CIC@S18 | sudo -S sudo chmod 666 /dev/ttyACM0")
+    #start rosocre master fro nodes to start running
     os.system("roscore & ")
     rospy.init_node('robot_gui')
     app = QtGui.QApplication(sys.argv)

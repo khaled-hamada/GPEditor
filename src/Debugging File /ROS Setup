@@ -13,3 +13,14 @@ source ~/.bashrc
 
 echo $ROS_PACKAGE_PATH
 
+
+/// kill process 
+1- list runnubng process 
+top 
+or---- 
+ps aux | grep -i <processname>
+
+2- kill 
+killall <processname>
+or --- 
+kill <processID>

@@ -1,4 +1,4 @@
-###############create base fir baymax
+###############create base for baymax
 The serial ports for the lidar and the Arduino board are defined using its static names on the roslaunch files. In order for the serial ports to be remembered and linked to its static names, a uDev rule must be created (except for Kinect and RealSense). Run Linorobot's uDev tool on the robot's computer:
 
 rosrun baymax_udev baymax_udev.py

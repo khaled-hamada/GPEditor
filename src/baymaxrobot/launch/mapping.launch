@@ -7,10 +7,6 @@
     <include file="$(find baymaxrobot)/launch/slam.launch" />
 
      <node name="rviz" pkg="rviz" type="rviz" args="-d $(find baymaxrobot)/rviz/slam.rviz"/>
-    
-	
-    </node>
-
 </launch>
 
 
